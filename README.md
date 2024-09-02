@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+# Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Todo List application built with React, TypeScript, Redux Toolkit, and Tailwind CSS. The app allows users to add, delete, and mark tasks as complete, with an option to filter tasks based on their status.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Todo**: Users can add new tasks to the todo list.
+- **Delete Todo**: Users can delete tasks from the todo list.
+- **Mark as Complete**: Users can mark tasks as completed or uncompleted.
+- **Filter Todos**: Users can filter the list to view all tasks, only active tasks, or only completed tasks.
+- **Responsive Design**: Styled with Tailwind CSS for a clean and user-friendly interface.
+- **Local Storage Support**: Todos persist across page reloads.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project is organized as follows:
 
-- Configure the top-level `parserOptions` property like this:
+- `/components`
+  - `TodoItem.tsx`: Component for individual todo items.
+  - `TodoList.tsx`: Component to display the list of todo items.
+- `/page`
+  - `Home.tsx`: Main page of the application.
+- `/store`
+    `/slices`
+  -   `todosSlice.ts`: Redux slice for managing todos.
+-   `store.ts`: Redux store configuration.
+- `App.tsx`: Main app component.
+- `main.tsx`: Entry point of the React application.
+- `index.css`: Tailwind CSS configuration.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation and Setup
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clone the repository**:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    ```bash
+    git clone https://github.com/your-username/todo-list-app.git
+    cd todo-list
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at `http://localhost:3000`.
+
+4. **Build for production**:
+
+    ```bash
+    npm run build
+    ```
+
+5. **Run the production build**:
+
+    ```bash
+    npm run start
+    ```

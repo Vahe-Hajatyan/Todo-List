@@ -13,8 +13,8 @@ interface TodosState {
 
 export enum Filter {
   ALL = 'ALL',
-  ACTIVE = 'ACTIVE',
   COMPLETED = 'COMPLETED',
+  ACTIVE = 'ACTIVE',
 }
 
 const initialState: TodosState = {
@@ -28,7 +28,7 @@ const todosSlice = createSlice({
   reducers: {
     addTodo: (state, action: PayloadAction<string>) => {
       state.todos[state.todos.length] = {
-        id: String(state.todos.length),
+        id: Date.now().toString(),
         text: action.payload,
         completed: false,
       };

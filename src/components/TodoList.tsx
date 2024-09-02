@@ -9,8 +9,8 @@ const TodoList: React.FC = () => {
   const todos = useSelector((state: RootState) => state.todos.todos);
   const filter = useSelector((state: RootState) => state.todos.filter);
 
-  const filteredTodos = todos.filter((todo:Todo) => {
-    switch (filter) {
+  const filteredTodos = todos.filter((todo: Todo) => {
+    switch (filter.toUpperCase()) {
       case Filter.ACTIVE:
         return !todo.completed;
       case Filter.COMPLETED:
@@ -19,10 +19,9 @@ const TodoList: React.FC = () => {
         return true;
     }
   });
-
   return (
     <div>
-      {filteredTodos.map((todo:Todo) => (
+      {filteredTodos.map((todo: Todo) => (
         <TodoItem key={todo.id} {...todo} />
       ))}
     </div>
