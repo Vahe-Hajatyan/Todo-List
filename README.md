@@ -21,9 +21,9 @@ The project is organized as follows:
 - `/page`
   - `Home.tsx`: Main page of the application.
 - `/store`
-    `/slices`
-  -   `todosSlice.ts`: Redux slice for managing todos.
--   `store.ts`: Redux store configuration.
+  - `/slices`
+    - `todosSlice.ts`: Redux slice for managing todos.
+  - `store.ts`: Redux store configuration.
 - `App.tsx`: Main app component.
 - `main.tsx`: Entry point of the React application.
 - `index.css`: Tailwind CSS configuration.
